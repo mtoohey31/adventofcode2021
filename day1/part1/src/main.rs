@@ -1,7 +1,7 @@
 use std::fs::read_to_string;
 
 fn main() {
-    let input = read_to_string("input").unwrap();
+    let input = read_to_string("../input").unwrap();
     let ints = input
         .split("\n")
         .into_iter()
