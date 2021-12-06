@@ -4,7 +4,7 @@
   - Rust
   - Go
   - Dart
-  - C
-  - Haskell
-  - Ruby?
+  - Ruby
+  - C?
+  - Haskell?
   - Scala?
