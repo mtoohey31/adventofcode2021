@@ -12,8 +12,7 @@ max_y = lines.map { |line| line.map { |point| point[1] }.max }.max
 grid = Array.new(max_y + 1).map { |_| Array.new(max_x + 1, 0) }
 
 lines.each do |line|
-  distance = [line.map { |coord| coord[0] }.max - line.map { |coord| coord[0] }.min,
-              line.map { |coord| coord[1] }.max - line.map { |coord| coord[1] }.min].max
+  distance = [(line[0][0] - line[1][0]).abs, (line[0][1] - line[1][1]).abs].max
 
   x_step = if line[0][0] < line[1][0]
              1
