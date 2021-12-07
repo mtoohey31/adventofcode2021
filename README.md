@@ -5,6 +5,7 @@
   - Go
   - Dart
   - Ruby
+  - Clojure
   - C?
   - Haskell?
   - Scala?
