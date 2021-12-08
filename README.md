@@ -6,6 +6,7 @@
   - Dart
   - Ruby
   - Clojure
+  - F#
   - C?
   - Haskell?
   - Scala?
