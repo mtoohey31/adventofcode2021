@@ -5,24 +5,23 @@
   (:gen-class))
 
 (defn -main []
-  (def day-map {})
   (println
-   (reduce
-    +
-    (map
-     (fn days
-       ([counter] (days counter 256))
-       ([counter days-remaining]
-        (if (>= counter days-remaining)
-          1
-          (let [new-spawned (- days-remaining counter 1)]
-            (if (contains? day-map new-spawned)
-              (get day-map new-spawned)
-              (let [new (+ (days 6 new-spawned) (days 8 new-spawned))]
-                (def day-map (assoc day-map new-spawned new))
-                new))))))
-     (map
-      clojure.edn/read-string
-      (clojure.string/split
-       (with-open [rdr (clojure.java.io/reader "../input")]
-         (first (line-seq rdr))) #","))))))
+   (loop [fish
+          (let [individual-fish
+                (map
+                 clojure.edn/read-string
+                 (clojure.string/split
+                  (with-open [rdr (clojure.java.io/reader "../input")]
+                    (first (line-seq rdr))) #","))]
+            (map (fn [x]
+                   (count (filter (fn [y]
+                                    (= x y)) individual-fish)))
+                 (take 9 (range)))) days 256]
+     (if (> days 0)
+       (recur
+        (concat
+         (drop-last 2 (drop 1 fish))
+         (map + (take 1 (take-last 2 fish)) (take 1 fish))
+         (take-last 1 fish)
+         (take 1 fish)) (- days 1))
+       (reduce + fish)))))
