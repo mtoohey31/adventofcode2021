@@ -8,5 +8,6 @@
   - Ruby
   - Clojure
   - F#
+  - Fish
   - Haskell?
   - Scala?
