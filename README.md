@@ -9,5 +9,6 @@
   - Clojure
   - F#
   - Fish
+  - R
   - Haskell?
   - Scala?
