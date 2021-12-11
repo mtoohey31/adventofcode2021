@@ -10,5 +10,6 @@
   - F#
   - Fish
   - R
+  - Elixir
   - Haskell?
   - Scala?
